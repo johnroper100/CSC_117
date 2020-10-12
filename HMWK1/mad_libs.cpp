@@ -3,7 +3,7 @@
 //Email Address: john.roper@assumption.edu
 //Assignment Number: 1
 //Description: A computerized game of mad libs.
-//Last Changed: 8/12/20, see https://github.com/johnroper100/CSC_117 for full changes
+//Last Changed: 8/13/20, see https://github.com/johnroper100/CSC_117 for full changes
 
 #include <iostream>
 #include <string>

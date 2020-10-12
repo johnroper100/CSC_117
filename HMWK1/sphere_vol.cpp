@@ -3,7 +3,7 @@
 //Email Address: john.roper@assumption.edu
 //Assignment Number: 1
 //Description: Calculates the volume of a sphere from its radius.
-//Last Changed: 8/12/20, see https://github.com/johnroper100/CSC_117 for full changes
+//Last Changed: 8/13/20, see https://github.com/johnroper100/CSC_117 for full changes
 
 #include <iostream>
 
