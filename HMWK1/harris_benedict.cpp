@@ -9,8 +9,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     char sex;
     int age;
     double weight, height;
@@ -28,25 +27,17 @@ int main()
     cout << "Enter M for male, or F for female: ";
     cin >> sex;
 
-    if (tolower(sex) == 'm')
-    {
+    if (tolower(sex) == 'm') {
         bmr = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
-    }
-    else if (tolower(sex) == 'f')
-    {
+    } else if (tolower(sex) == 'f') {
         bmr = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
-    }
-    else
-    {
+    } else {
         cout << "You didn't enter a supported value for M/F!" << endl;
     }
 
-    if (bmr != -1.0)
-    {
+    if (bmr != -1.0) {
         cout << "You need to eat " << bmr / 230 << " to maintain your weight." << endl;
-    }
-    else
-    {
+    } else {
         cout << "Sorry, we couldn't calculate a value. Please try again and enter a supported value for M/F" << endl;
     }
 

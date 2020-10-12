@@ -10,8 +10,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     string instructorName, playerName, food, number, adjective, color, animal;
 
     cout << "MAD LIBS!\nWelcome, what's your name? ";

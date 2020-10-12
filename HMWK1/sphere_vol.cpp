@@ -9,8 +9,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     double radius, volume;
     cout << "Enter the radius of a sphere." << endl;
     cin >> radius;
