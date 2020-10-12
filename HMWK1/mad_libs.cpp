@@ -2,7 +2,7 @@
 //Author: John Roper
 //Email Address: john.roper@assumption.edu
 //Assignment Number: 1
-//Description: A computerized grame of mad libs.
+//Description: A computerized game of mad libs.
 //Last Changed: 8/12/20, see https://github.com/johnroper100/CSC_117 for full changes
 
 #include <iostream>
