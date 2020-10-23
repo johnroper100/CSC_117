@@ -23,7 +23,7 @@ int main()
                     {
                         if ((tens * 3) == thousands)
                         {
-                            if (ones % 2 != 0)
+                            if (ones % 2 != 0) // check if is odd
                             {
                                 if (ones + tens + hundreds + thousands == 27)
                                 {
