@@ -25,16 +25,122 @@ int main()
         if (arabicValue >= 1000 && arabicValue <= 3000)
         {
             digit = arabicValue / 1000;
-            romanValue = "";
+            switch (digit) // Switch values based on the table at https://roman-numerals.info/
+            {
+            case 1:
+                romanValue = "M";
+                break;
+            case 2:
+                romanValue = "MM";
+                break;
+            case 3:
+                romanValue = "MMM";
+                break;
+            default:
+                romanValue = "";
+            }
 
             digit = (arabicValue / 100) % 10;
-            romanValue += "";
+            switch (digit)
+            {
+            case 1:
+                romanValue += "C";
+                break;
+            case 2:
+                romanValue += "CC";
+                break;
+            case 3:
+                romanValue += "CCC";
+                break;
+            case 4:
+                romanValue += "CD";
+                break;
+            case 5:
+                romanValue += "D";
+                break;
+            case 6:
+                romanValue += "DC";
+                break;
+            case 7:
+                romanValue += "DCC";
+                break;
+            case 8:
+                romanValue += "DCCC";
+                break;
+            case 9:
+                romanValue += "CM";
+                break;
+            default:
+                romanValue += "";
+            }
 
             digit = (arabicValue / 10) % 10;
-            romanValue += "";
+            switch (digit)
+            {
+            case 1:
+                romanValue += "X";
+                break;
+            case 2:
+                romanValue += "XX";
+                break;
+            case 3:
+                romanValue += "XXX";
+                break;
+            case 4:
+                romanValue += "XL";
+                break;
+            case 5:
+                romanValue += "L";
+                break;
+            case 6:
+                romanValue += "LX";
+                break;
+            case 7:
+                romanValue += "LXX";
+                break;
+            case 8:
+                romanValue += "LXXX";
+                break;
+            case 9:
+                romanValue += "XC";
+                break;
+            default:
+                romanValue += "";
+            }
 
             digit = arabicValue % 10;
-            romanValue += "";
+            switch (digit)
+            {
+            case 1:
+                romanValue += "I";
+                break;
+            case 2:
+                romanValue += "II";
+                break;
+            case 3:
+                romanValue += "III";
+                break;
+            case 4:
+                romanValue += "IV";
+                break;
+            case 5:
+                romanValue += "V";
+                break;
+            case 6:
+                romanValue += "VI";
+                break;
+            case 7:
+                romanValue += "VII";
+                break;
+            case 8:
+                romanValue += "VIII";
+                break;
+            case 9:
+                romanValue += "IX";
+                break;
+            default:
+                romanValue += "";
+            }
 
             cout << "\nThe Roman equivalent of that value is: " << romanValue << endl;
         }
