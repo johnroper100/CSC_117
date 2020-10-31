@@ -34,7 +34,7 @@ double getWaistSize(double weight, int age) {
 }
 
 int main() {
-    string confirm = "y";
+    string confirm;
     double height, weight;
     int age;
     do {

@@ -18,7 +18,7 @@ double getMilesPerGallon(double litersUsed, double milesDriven) {
 }
 
 int main() {
-    string confirm = "y";
+    string confirm;
     double litersUsed, milesDriven;
     do {
         cout << "----------------------------------------" << endl;

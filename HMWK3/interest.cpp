@@ -20,7 +20,7 @@ double calculateInterest(double initialBalance, double interestRate, int numMont
 }
 
 int main() {
-    string confirm = "y";
+    string confirm;
     double initialBalance;
     double interestRate;
     int numMonthsInt;
