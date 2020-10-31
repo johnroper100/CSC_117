@@ -2,7 +2,7 @@
 //Author: John Roper
 //Email Address: john.roper@assumption.edu
 //Assignment Number: 3
-//Description: Sample program
+//Description: Calculate interest accured
 //Last Changed: 10/30/20, see https://github.com/johnroper100/CSC_117 for full changes
 
 #include <iostream>
