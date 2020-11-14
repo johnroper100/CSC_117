@@ -2,12 +2,13 @@
 //Author: John Roper
 //Email Address: john.roper@assumption.edu
 //Assignment Number: 5
-//Description: Calculate average grades
+//Description: Calculate a gradebook
 //Last Changed: 11/13/20, see https://github.com/johnroper100/CSC_117 for full changes
 
 #include <cstdlib>   // for exit()
 #include <fstream>   // for files
 #include <iostream>  // for streams
+#include <sstream>
 #include <string>
 using namespace std;
 
@@ -19,21 +20,23 @@ void calcScore(ifstream& input, ofstream& output);
 //                  to input file except additional field added (score
 //                  average)
 
-int main() {
-    // Open both files, the first for input and second for output.  Also
-    // display error message if files cannot be opened.
-    // ENTER YOUR CODE HERE
+void copy(ifstream& input, ofstream& output);
+//Precondition:     Input and output file stream parameters are valid.
+//Postcondition:    Output file is a copy of the input file.
+//Remarks:          Used to implement Enhancement #c.
 
+int main() {
     ifstream inputfile;
-    inputfile.open("scores.dat");
+    ofstream outputfile;
+
+    inputfile.open("gradebook-scores.dat");
     if (inputfile.fail()) {
         cout << "Can not open the input file" << endl;
         cout << "Now discontinuing program execution" << endl;
         exit(1);
     }
 
-    ofstream outputfile;
-    outputfile.open("scores-output.dat");
+    outputfile.open("gradebook-scores-output.dat");
     if (outputfile.fail()) {
         cout << "Can not open the output file" << endl;
         cout << "Now discontinuing program execution" << endl;
@@ -42,6 +45,28 @@ int main() {
 
     // Copy records and include score average
     calcScore(inputfile, outputfile);
+
+    inputfile.close();
+    outputfile.close();
+
+    inputfile.open("gradebook-scores-output.dat");
+    if (inputfile.fail()) {
+        cout << "Can not open the input file" << endl;
+        cout << "Now discontinuing program execution" << endl;
+        exit(1);
+    }
+
+    outputfile.open("gradebook-scores.dat");
+    if (outputfile.fail()) {
+        cout << "Can not open the output file" << endl;
+        cout << "Now discontinuing program execution" << endl;
+        exit(1);
+    }
+
+    copy(inputfile, outputfile);
+
+    inputfile.close();
+    outputfile.close();
 
     cout << endl
          << "The files have been processed." << endl;
@@ -53,23 +78,28 @@ void calcScore(ifstream& input, ofstream& output) {
     string lastName;
     float scoreTotal = 0.0;
     int currentScore;
-
-    while (!input.eof()) {
+    string inputString;
+    while (getline(input, inputString)) {
+        istringstream ss(inputString);
         scoreTotal = 0.0;
-        input >> firstName;
+
+        ss >> firstName;
         output << firstName << " ";
-        input >> lastName;
+        ss >> lastName;
         output << lastName << " ";
 
-        for (int i = 0; i < 10; i++) {
-            input >> currentScore;
+        while (ss >> currentScore) {
             scoreTotal += currentScore;
             output << currentScore << " ";
         }
 
         output << scoreTotal / 10.0 << "\n";
     }
+}
 
-    output.close();
-    input.close();
+void copy(ifstream& input, ofstream& output) {
+    string inputString;
+    while (getline(input, inputString)) {
+        output << inputString << "\n";
+    }
 }
